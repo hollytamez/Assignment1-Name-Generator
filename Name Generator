@@ -1,0 +1,161 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--In this program I took the upstart program and made it into a name generator by changing the words in the dictionary. I added the top 100 names, boys and girls of 1999 the year that I was born. I also added a few of my friends names for fun. I then added the current top last names in the United states. I also changed the colors to pastel colors to match the baby aesthetic.-->
+<head>
+  <title>Upstart</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="poem, generator" />
+  <meta name="date" content="2013-10-09" />
+  <style type="text/css">a:link {text-decoration:none;}</style>
+</head>
+<body style="font-family: Helvetica, 'Nimbus Sans L', 'Liberation Sans', Arial, sans-serif; background:#F2D7D5; color:black; padding:14px 28px 0 28px">
+<div style="text-align:center; font-size:15px; padding: 14px 0 28px 0;"><b style="font-size:42px">Baby Name Generator</a></div>
+<div style="width:628px; font-size:36px; margin-left:auto; margin-right:auto">
+<div id="dotcom1" style="text-align:center; height:250px; width:300px; line-height:250px; background:#D98880; color:white; float:left"></div>
+<div id="dotcom3" style="text-align:center; height:250px; width:300px; line-height:250px; background:#DAF7A6; color:white; float:right"></div>
+<div style="height:28px; clear:both"></div>
+<div id="dotcom4" style="text-align:center; height:250px; width:300px; line-height:250px; background:#D2B4DE; color:white; float:left; margin-bottom:28px"></div>
+<div id="dotcom2" style="text-align:center; height:250px; width:300px; line-height:250px; background:#D4E6F1; color:white; float:right; margin-bottom: 28px"></div>
+</div>
+<script type="text/javascript">
+var panel = 1, names = [
+    ['Holly ', 'Tamez'],
+    ['Marissa ', 'Rodriguez'],
+    ['Emily ', 'Smith'],
+    ['Alexis ', 'Johnson'],
+    ['Ashley ', 'Williams'],
+    ['Amber ', 'Jones'],
+    ['Megan ', 'Brown'],
+    ['Lauren ', 'Davis'],
+    ['Olivia ','Wilson'],
+    ['Taylor ', 'Moore'],
+    ['Samantha ', 'Anderson'],
+    ['Hannah ', 'Thomas'],
+    ['Sandy ', 'Jackson'],
+    ['Avery ', 'Harris'],
+    ['Austin ', 'White'],
+    ['Elizabeth ', 'Martin'],
+    ['Jose ', 'King'],
+    ['Jacob ', 'Gonzalez'],
+    ['Michael ', 'Thompson'],
+    ['Christopher ', 'Garcia'],
+    ['Joshua ', 'Clark'],
+    ['Jake ', 'Lewis'],
+    ['Matthew ', 'Lee'],
+    ['Mark ', 'Walker'],
+    ['Joseph ', 'Allen'],
+    ['Allison ', 'Young'],
+    ['John ', 'Doe'],
+    ['Mia ', 'Stanely'],
+    ['Robert ', 'Flores'],
+    ['Hannah ', 'Nguyen'],
+    ['Alexis ', 'Green'],
+    ['Nicholas ', 'Adams'],
+    ['Ashley ', 'Nelson'],
+    ['Andrew ', 'Baker'],
+    ['Madison ', 'Hall'],
+    ['Daniel ', 'Rivera'],
+    ['Jessica ', 'Campbell'],
+    ['Tyler ', 'Mitchell'],
+    ['Alyssa ', 'Roberts'],
+    ['Ryan ', 'Gomez'],
+    ['Kayla ', 'Phillips'],
+    ['William ', 'Evans'],
+    ['Brianna ', 'Turner'],
+    ['David ', 'Diaz'],
+    ['Victoria ', 'Parker'],
+    ['Emma ', 'Cruz'],
+    ['Abigail ', 'Edwards'],
+    ['Rachel ', 'Collins'],
+    ['Anthony ', 'Reyes'],
+    ['Jennifer ', 'Stewart'],
+    ['James ', 'Morris'],
+    ['Justin ', 'Morales'],
+    ['Amanda ', 'Murphy'],
+    ['Sydney ', 'Cook'],
+    ['Noah ', 'Rogers'],
+    ['Morgan ', 'Gutierrez'],
+    ['Christian ', 'Ortiz'],
+    ['Nicole ', 'Morgan'],
+    ['Samuel ', 'Cooper'],
+    ['Grace ', 'Peterson'],
+    ['Kyle ', 'Bailey'],
+    ['Destiny ', 'Reed'],
+    ['Benjamin ', 'Kelly'],
+    ['Anna ', 'Howard'],
+    ['Jordan ', 'Ramos'],
+    ['Julia ', 'Kim'],
+    ['Thomas ', 'Cox'],
+    ['Haley ', 'Ward'],
+    ['Nathan ', 'Richardson'],
+    ['Alexandra ', 'Watson'],
+    ['Cameron ', 'Brooks'],
+    ['Kaitlyn ', 'Chavez'],
+    ['Kevin ', 'Wood'],
+    ['Natalie ', 'James'],
+    ['Jose ', 'Mendoza'],
+    ['Brittany ', 'Ruiz'],
+    ['Hunter ', 'Hughes'],
+    ['Katherine ', 'Price'],
+    ['Ethan ', 'Alvarez'],
+    ['Stephanie ', 'Castillo'],
+    ['Aaron ', 'Medina'],
+    ['Rebecca ', 'Sanders'],
+    ['Eric ', 'Patel'],
+    ['Maria ', 'Myers'],
+    ['Jason ', 'Ross'],
+    ['Caleb ', 'Foster'],
+    ['Savannah ', 'Jimenez'],
+    ['Brian ', 'Powell'],
+    ['Danielle ', 'Ramirez'],
+    ['Janelle ', 'Sullivan'],
+    ['Arianna ', 'Bell'],
+    ['Melissa ', 'Coleman'],
+    ['Sarah ', 'Butler'],
+    ['Adam ', 'Henderson'],
+    ['Cody ', 'Barnes'],
+    ['Juan ', 'Romero'],
+    ['Irving ', 'Vasquez'],
+    ['Alexander ', 'Simmons'],
+    ['Colin ', 'Jordan'],
+    ['Gabrielle ', 'Patterson'],
+    ['Steven ', 'Hamilton'],
+    ], fonts = [
+    'Arial, Helvetica, sans-serif',
+    'Arial Black, Gadget, sans-serif',
+    'Impact, Charcoal, sans-serif',
+    'Lucida Console, Monaco, monospace',
+    'Lucida Sans Unicode, Lucida Grande, sans-serif',
+    'Tahoma, Geneva, sans-serif',
+    'Trebuchet, Trebuchet MS, sans-serif',
+    'Verdana, Geneva, sans-serif',
+    ]
+function rand_index(len) {
+    return Math.floor(Math.random() * len);
+}
+function update() {
+    "use strict";
+    var first, second, font, dotcomdiv = document.getElementById('dotcom' + panel);
+    first = rand_index(names.length);
+    second = rand_index(names.length - 1);
+    if (second == first)
+        { second = names.length - 1; }
+    dotcomdiv.innerHTML = names[first][0] + names[second][1];
+    panel = panel + 1;
+    if (panel === 5)
+        { panel = 1; }
+    font = fonts[rand_index(fonts.length)];
+    dotcomdiv.style.fontFamily = font;
+}
+update();
+update();
+update();
+update();
+setInterval(update, 500);
+</script>
+</body>
+</html>
